@@ -23,6 +23,7 @@ Route::get('posts/{post}', function ($slug) {
 
     if (! file_exists($path)){
        redirect('/');
+       //return home page
     }
     return view('blog', [
         'posts' =>$path
