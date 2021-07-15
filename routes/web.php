@@ -23,6 +23,7 @@ Route::get('posts/{post}', function ($slug) {
 
     if (! file_exists($path)){
         abort(404);
+        abort(404);
 
     }
     return view('blog', [
