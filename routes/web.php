@@ -22,9 +22,7 @@ Route::get('posts/{post}', function ($slug) {
     $path=file_get_contents(__DIR__ . '/../resources/post/'.$slug.'.html');
 
     if (! file_exists($path)){
-        abort(404);
-        abort(404);
-
+       redirect('/');
     }
     return view('blog', [
         'posts' =>$path
