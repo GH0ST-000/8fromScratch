@@ -1,5 +1,6 @@
 <?php
-
+use  App\modes\Post;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $document=[];
+    $files= File::files(resource_path("post"));
+
+    foreach ($files as $file){
+      $document[]=  \Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
+
+    }
+    ddd($document);
+
 });
 
 Route::get('posts/{post}', function ($slug) {
 
-    $path=file_get_contents(__DIR__ . '/../resources/post/'.$slug.'.html');
-
-    if (! file_exists($path)){
-       redirect('/');
-       //return home page
-    }
     return view('blog', [
-        'posts' =>$path
+        'posts' =>App\Models\Post::find($slug)
     ]);
 })->where('post','[A-z_\-]+');
 
