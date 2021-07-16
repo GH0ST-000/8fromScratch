@@ -1,16 +1,22 @@
+@extends('layout')
+@section('banner')
+    <h1>My Blog</h1>
 
-    <!doctype html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="/app.css">
-</head>
-<body>
-<?php foreach ($posts as $post) :?>
-<article>
+@endsection
 
-<?= $post ?>
 
-</article>
-<?php endforeach; ?>
-</body>
-</html>
+@section('content')
+    @foreach ($posts as $post)
+        <article>
+            <h1>
+                <a href="/post/<?= $post->slug; ?>">
+                    <?= $post->title; ?>
+                </a>
+            </h1>
+            <div>
+                <?= $post->body; ?>
+            </div>
+        </article>
+    @endforeach
+
+    @endsection

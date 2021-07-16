@@ -10,7 +10,30 @@ use Illuminate\Support\Facades\File;
 
 class Post
 {
-public  static  function find($slug){
+    public $title;
+    public  $excerpt;
+    public  $date;
+    public  $body;
+    public  $slug;
+
+    /**
+     * Post constructor.
+     * @param $title
+     * @param $excerpt
+     * @param $date
+     * @param $body
+     */
+    public function __construct($title, $excerpt, $date, $body,$slug)
+    {
+        $this->title = $title;
+        $this->excerpt = $excerpt;
+        $this->date = $date;
+        $this->body = $body;
+        $this->slug=$slug;
+    }
+
+
+    public  static  function find($slug){
     if (!file_exists($path=resource_path("post/{$slug}.html"))){
 throw  new ModelNotFoundException();
     }
@@ -21,6 +44,8 @@ throw  new ModelNotFoundException();
 
     return cache()->remember("posts.{$slug}",1200,fn()=>file_get_contents($path));
 }
+
+
 public  static  function all(){
     $files= File::files(resource_path("post/"));
   return   array_map(function ($file){

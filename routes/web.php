@@ -16,14 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $document=[];
+    $posts=[];
     $files= File::files(resource_path("post"));
 
     foreach ($files as $file){
-      $document[]=  \Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
-
+      $document=  \Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
+        $posts[]=new \App\Models\Post(
+          $document->title,
+          $document->excerpt,
+            $document->date,
+            $document->body(),
+           $document->slug
+        );
     }
-    ddd($document);
+    return view('post',[
+       'posts'=>$posts
+    ]);
 
 });
 

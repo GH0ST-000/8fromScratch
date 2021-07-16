@@ -6,7 +6,10 @@
 <body>
 
 <article>
-    <?=$posts   ?>
+    <h1>{{$post->title}}</h1>
+    <div class="div">
+        {!! $post->body !!}
+    </div>
 </article>
 
 </body>
