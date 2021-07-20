@@ -16,29 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $posts=[];
-    $files= File::files(resource_path("post"));
-
-    foreach ($files as $file){
-      $document=  \Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
-        $posts[]=new \App\Models\Post(
-          $document->title,
-          $document->excerpt,
-            $document->date,
-            $document->body(),
-           $document->slug
-        );
-    }
     return view('post',[
-       'posts'=>$posts
+       'posts'=>\App\Models\Post::with('category')->get()
     ]);
 
 });
 
-Route::get('posts/{post}', function ($slug) {
+Route::get('posts/{post:slug}', function ($post) {
 
     return view('blog', [
-        'posts' =>App\Models\Post::find($slug)
+        'posts' =>App\Models\Post::find($post   )
     ]);
 })->where('post','[A-z_\-]+');
+
+Route::get('categories/{category:slug}',function (\App\Models\Category $category){
+
+    return view('post',[
+        'posts'=>$category->posts
+    ]);
+});
 
