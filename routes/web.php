@@ -15,24 +15,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    return view('post',[
-       'posts'=>\App\Models\Post::with('category')->get()
+    return view('posts',[
+        'posts'=>\App\Models\Post::all()
     ]);
+
 
 });
+ Route::get('posts/{posts}',function (\App\Models\Post  $posts){
+//     $post=\App\Models\Post::findorFail($id);
+     return view('post',[
+         'post'=>$posts
+     ]);
 
-Route::get('posts/{post:slug}', function ($post) {
 
-    return view('blog', [
-        'posts' =>App\Models\Post::find($post   )
-    ]);
-})->where('post','[A-z_\-]+');
 
-Route::get('categories/{category:slug}',function (\App\Models\Category $category){
+ });
 
-    return view('post',[
-        'posts'=>$category->posts
-    ]);
-});
+ Route::get('categories/{category:slug}',function (\App\Models\Category $category){
+     return view('posts',[
+         'posts'=>$category->posts
+     ]);
+ });
+
+
+
 

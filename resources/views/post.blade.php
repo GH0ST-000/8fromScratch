@@ -1,26 +1,21 @@
-@extends('layout')
-@section('banner')
-    <h1>My Blog</h1>
-
-@endsection
-
+@extends('component.layout')
 
 @section('content')
-    @foreach ($posts as $post)
-        <article>
-                <h1>
 
-                    <a href="/post/<?= $post->slug; ?>">
-                        <?= $post->title; ?>
-                    </a>
-                </h1>
-            <p>
-                <a href="/categories/{{$post->category->slug}}">{{$post->category->name}}</a>
-            </p>
-            <div>
-                <?= $post->body; ?>
-            </div>
-        </article>
-    @endforeach
+    <article>
 
-    @endsection
+        <h1><?= $post->title ?></h1>
+
+        <p>
+        <a href="/catgories/{{$post->category->slug}}">{{$post->category->name}}</a>
+        </p>
+
+        <div>
+<p>
+            <?= $post->body ?>
+</p>
+        </div>
+    </article>
+    <a href="/">Go Back </a>
+
+@endsection
