@@ -1,7 +1,12 @@
 <?php
+
 use  App\modes\Post;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('posts',[
-        'posts'=>\App\Models\Post::all()
-    ]);
+Route::get('/',[\App\Http\Controllers\PostController::class,'index'])->name('home');
 
 
-});
  Route::get('posts/{posts}',function (\App\Models\Post  $posts){
 //     $post=\App\Models\Post::findorFail($id);
      return view('post',[
@@ -33,7 +34,9 @@ Route::get('/', function () {
 
  Route::get('categories/{category:slug}',function (\App\Models\Category $category){
      return view('posts',[
-         'posts'=>$category->posts
+         'posts'=>$category->posts,
+         'currentCategory'=>$category,
+         'categories'=>\App\Models\Category::all()
      ]);
  });
 

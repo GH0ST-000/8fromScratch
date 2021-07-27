@@ -20,7 +20,10 @@
 
                 <div class="mt-4">
                     <h1 class="text-3xl">
-                        This is a big title and it will look great on two or even three lines. Wooohoo!
+                        <a href="/posts/{{$post->slug}}">
+                            {{$post->excerpt}}
+
+                        </a>
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
