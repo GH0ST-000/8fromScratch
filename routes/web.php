@@ -24,7 +24,7 @@ Route::get('/',[\App\Http\Controllers\PostController::class,'index'])->name('hom
 
  Route::get('posts/{posts}',function (\App\Models\Post  $posts){
 //     $post=\App\Models\Post::findorFail($id);
-     return view('post',[
+     return view('posts.show',[
          'post'=>$posts
      ]);
 
@@ -33,7 +33,7 @@ Route::get('/',[\App\Http\Controllers\PostController::class,'index'])->name('hom
  });
 
  Route::get('categories/{category:slug}',function (\App\Models\Category $category){
-     return view('posts',[
+     return view('posts.index',[
          'posts'=>$category->posts,
          'currentCategory'=>$category,
          'categories'=>\App\Models\Category::all()

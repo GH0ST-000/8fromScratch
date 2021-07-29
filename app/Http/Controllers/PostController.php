@@ -7,19 +7,26 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public  function  index(){
-        return view('posts',[
+        return view('posts.index',[
             'posts'=>$this->getPosts(),
             'categories'=>\App\Models\Category::all()
         ]);
 
     }
 protected function getPosts(){
-    $posts=Post::all();
+    $posts=null;
     if (\request('search')){
-        $posts
-            ->where('title','like','%'.\request('search').'%')
+
+        $posts=Post::where('title','like','%'.\request('search').'%')
             ->orWhere('body','like','%'.\request('search').'%');
     }
+    if ($posts===null){
+        return Post::all();
+
+    }else
+        return $posts;
+
+
 
 }
 
