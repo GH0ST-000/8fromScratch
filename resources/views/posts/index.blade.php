@@ -1,3 +1,4 @@
+
 <x-layout>
     <section class="px-6 py-8">
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
@@ -6,7 +7,7 @@
                     <img src="/images/illustration-1.png" alt="" class="rounded-xl">
 
                     <p class="mt-4 block text-gray-400 text-xs">
-                        Published <time>{{$post->created_at->diffForHumans()}}</time>
+                        Published <time>{{$posts->created_at->diffForHumans()}}</time>
                     </p>
 
                     <div class="flex items-center lg:justify-center text-sm mt-4">
@@ -36,18 +37,18 @@
                         </a>
 
                         <div class="space-x-2">
-                            <a href="/categories/{{$post->category->slug}}"
+                            <a href="/categories/{{$posts->category->slug}}"
                                class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
-                               style="font-size: 10px">{{$post->category->name}}</a>
+                               style="font-size: 10px">{{$posts->category->name}}</a>
                         </div>
                     </div>
 
                     <h1 class="font-bold text-3xl lg:text-4xl mb-10">
-                        {{$post->title}}
+                        {{$posts->title}}
                     </h1>
 
                     <div class="space-y-4 lg:text-lg leading-loose">
-                      {{$post->body}}
+                      {{$posts->body}}
                     </div>
                 </div>
             </article>
