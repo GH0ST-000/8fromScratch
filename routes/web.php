@@ -41,6 +41,10 @@ Route::get('/',[\App\Http\Controllers\PostController::class,'index'])->name('hom
      ]);
  });
 
+ Route::get('register',[\App\Http\Controllers\RegisterController::class,'create']);
+Route::post('register',[\App\Http\Controllers\RegisterController::class,'store']);
+
+
 
 
 
