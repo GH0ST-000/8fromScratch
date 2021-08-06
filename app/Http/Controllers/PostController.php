@@ -29,6 +29,9 @@ protected function getPosts(){
 
 
 }
+public  function addComents(){
+
+}
 
 
 }

@@ -41,10 +41,11 @@ Route::get('/',[\App\Http\Controllers\PostController::class,'index'])->name('hom
      ]);
  });
 
- Route::get('register',[\App\Http\Controllers\RegisterController::class,'create']);
-Route::post('register',[\App\Http\Controllers\RegisterController::class,'store']);
+ Route::get('register',[\App\Http\Controllers\RegisterController::class,'create'])->middleware('guest');
+Route::post('register',[\App\Http\Controllers\RegisterController::class,'store'])->middleware('guest');
+Route::post('logout',[\App\Http\Controllers\SessionController::class,'destroy'])->middleware('auth');
+Route::get('/login',[\App\Http\Controllers\SessionController::class,'create'])->middleware('guest');
 
-
-
-
+Route::post('login',[\App\Http\Controllers\SessionController::class,'store'])->middleware('guest');
+Route::post('posts/{post:slug}/comments',[\App\Http\Controllers\PostCommentController::class,'store']);
 
