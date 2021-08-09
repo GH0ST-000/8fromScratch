@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('newsletter/',\App\Http\Controllers\NewsletterController::class );
 Route::get('/',[\App\Http\Controllers\PostController::class,'index'])->name('home');
 
 
@@ -49,3 +49,9 @@ Route::get('/login',[\App\Http\Controllers\SessionController::class,'create'])->
 Route::post('login',[\App\Http\Controllers\SessionController::class,'store'])->middleware('guest');
 Route::post('posts/{post:slug}/comments',[\App\Http\Controllers\PostCommentController::class,'store']);
 
+Route::get('admin/posts',[\App\Http\Controllers\AdminPostController::class,'index'])->middleware('admin');
+Route::get('admin/posts/create',[\App\Http\Controllers\PostController::class,'create'])->middleware('admin');
+
+Route::post('admin/posts',[\App\Http\Controllers\PostController::class,'store'])->middleware('admin');
+Route::get('admin/posts/1/edit',[\App\Http\Controllers\AdminPostController::class,'edit'])->middleware('admin');
+Route::delete('admin/posts/6',[\App\Http\Controllers\AdminPostController::class,'destroy'])->middleware('admin');
