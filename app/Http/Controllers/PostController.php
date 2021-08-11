@@ -5,6 +5,12 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
+# Remove unused imports
+# Correct indintations
+# Remove empty functions
+# Remove unnesessary blank lines
+# Extract validation into its own request
+
 class PostController extends Controller
 {
     public  function  index(){

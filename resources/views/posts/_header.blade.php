@@ -1,3 +1,8 @@
+# Fix indentations
+# Remove additional blank lines
+# Extract svg-s in their own files
+# Have one standard: blade files with underscode or without it
+
 <header class="max-w-xl mx-auto mt-20 text-center">
     <h1 class="text-4xl">
         Latest <span class="text-blue-500">Laravel From Scratch</span> News
@@ -68,6 +73,7 @@
 
         <!-- Search -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
+            # Figure out why do we need this form
             <form method="GET" action="#">
                 @if(request('category'))
                     <input type="hidden" name="category" value="{{request('category')}}">

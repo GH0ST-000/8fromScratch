@@ -1,3 +1,10 @@
+# Fix indentations
+# Remove additional blank lines
+# Extract logic into the controller
+# Use named routes
+# Remove rotten code
+# Give variables a bit spacing
+
 <x-layout>
     <section>
         <h1 class="text-lg font-bold mb-4">
@@ -51,6 +58,7 @@
 {{--                <textarea class="border border-gray-400 p-2 w-full" type="text" name="category" id="category" required></textarea>--}}
                 <select  class="border border-gray-400 p-2 w-full" type="text" name="category_id" id="category_id">
                 @php
+                # Extract logic into controller
                 $categories=App\Models\Category::all();
 
                 @endphp

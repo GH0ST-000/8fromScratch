@@ -1,3 +1,6 @@
+# Remove additional blank lines
+# a bit of spacing arround variables: {{ $variable }}
+# Correct HTML Structure
 
 
 <article

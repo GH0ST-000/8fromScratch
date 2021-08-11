@@ -1,3 +1,6 @@
+# Fix indentations
+# Remove additional blank lines
+
 <x-layout>
     <section class="px-6 py-8">
         <main class="max-w-lg mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
@@ -30,15 +33,17 @@
                         Password
                     </label>
 
-                    <input class="border border-gray-400 p-2 w-full"
-                           type="password"
-                           name="password"
-                           id="password"
-                           required
+                    # Use this as an example for formatting
+                    <input 
+                        class="border border-gray-400 p-2 w-full"
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
                     >
-                    @error('password')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
+                        @error('password')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                 </div>
 
                 <div>

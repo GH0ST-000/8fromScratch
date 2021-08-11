@@ -4,6 +4,8 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+# Remove unused functions
+
 class Layout extends Component
 {
     /**

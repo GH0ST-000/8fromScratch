@@ -12,10 +12,10 @@ class Post extends Model
     public  function  getRouteKeyName()
     {
         return 'slug';
-    }
+    } # Add blank line between functions
     public  function  category(){
         return $this->belongsTo(Category::class);
-    }
+    } # Add blank line between functions
     public  function  comments(){
         return $this->hasMany(Comment::class);
     }

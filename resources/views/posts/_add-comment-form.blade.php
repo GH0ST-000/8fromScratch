@@ -1,3 +1,7 @@
+# Have one standard: blade files with underscode or without it
+# Fix HTML Doc indentations
+# No inline styling
+
 @auth
     <x-panel>
         <form action="/posts/{{$posts->slug}}/comments" method="post">

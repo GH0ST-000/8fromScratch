@@ -1,5 +1,8 @@
-
+# Remove rotten code
 {{--@dd($post)--}}
+
+# a bit of spacing arround variables: {{ $variable }}
+# Correct HTML Structure
 
 @foreach($post->comments as $comment)
 <article class="flex bg-gray-100 p-6 border border-gray-200 rounded-xl space-x-4">

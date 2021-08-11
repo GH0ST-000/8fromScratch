@@ -1,3 +1,7 @@
+# Fix HTML indenctations
+# Remove additional blank lines
+# Give variables space
+
 <x-layout>
 <x-slot name="slot">
     @include('posts._header')

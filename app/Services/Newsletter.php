@@ -1,7 +1,8 @@
 <?php
-
+# remove additional blank lines
 
 namespace App\Services;
+# remove additional blank lines
 
 
 class Newsletter
@@ -14,15 +15,15 @@ class Newsletter
             'email_address'=>$email,
             'status'=>'subscribed'
         ]);
-
+        # remove additional blank lines
     }
     protected function client(){
-        $mailchimp = new \MailchimpMarketing\ApiClient();
+        $mailchimp = new \MailchimpMarketing\ApiClient(); # Correct indentations
       return  $mailchimp->setConfig([
             'apiKey' => config('services.mailchimp.key'),
             'server' => 'us5'
         ]);
-
+        # remove additional blank lines
     }
-
+    # remove additional blank lines
 }

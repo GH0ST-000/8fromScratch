@@ -21,7 +21,7 @@
                     <p class="text-red-500 text-xs mt-2">{{$messsage}}</p>
                     @enderror
                 </div>
-
+                # remove additional blank line
 
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="excerpt">Excerpt</label>
@@ -41,6 +41,7 @@
 
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="category_id">Category</label>
+                    # Remove commented(rotten) code 
                     {{--                <textarea class="border border-gray-400 p-2 w-full" type="text" name="category" id="category" required></textarea>--}}
 {{--                    <select  class="border border-gray-400 p-2 w-full" type="text" name="category_id" id="category_id">--}}
 {{--                        @php--}}

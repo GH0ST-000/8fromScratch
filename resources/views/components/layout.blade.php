@@ -1,3 +1,8 @@
+# Remove additional lines
+# Correct indentations
+# Correct HTML Structure
+# Use route names instead of hardcoded routes
+
 <!doctype html>
 <html>
 <head>
@@ -27,7 +32,8 @@
                <select>
 
              <option>  <button class="text-xs font-bold uppercase" >Welcome,{{auth()->user()->name}}!</button></option>
-                   <option><button onclick="/admin/posts/create">Create New Post</button></option>
+                                        # Use laravel route names: {{ route('post.create') }}   
+                <option><button onclick="/admin/posts/create">Create New Post</button></option>
                </select>
                 <form method="post" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
                     @csrf
@@ -45,7 +51,7 @@
     </nav>
 
 
-
+    # let the variables breath: spaces -> {{ $slot }}
     {{$slot}}
 
 

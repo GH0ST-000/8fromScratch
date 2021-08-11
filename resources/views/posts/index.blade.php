@@ -1,3 +1,8 @@
+# Fix HTML indenctations
+# Use named routes
+# Remove additional blank lines
+# Extract svg-s in their own files
+# No inline styling
 
 <x-layout>
     <section class="px-6 py-8">

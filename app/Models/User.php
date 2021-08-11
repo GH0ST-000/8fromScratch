@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail; 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+
+# Remove unused classes
+# Correct indentations
+# Remove additional blank lines
 
 class User extends Authenticatable
 {
@@ -19,6 +23,26 @@ class User extends Authenticatable
     protected $guarded=[
 
         ];
+
+    # Remove after you see and understand
+    /**
+     *  company_id, name, idenetification_number, created_at, updated_at
+     */
+    
+    /**
+     *    protected $guarded = [
+     *      'company_id',
+     *      'idenetification_number',
+     *   ];
+     */
+
+    /**
+     * protected $fillable = [
+     *  'name',
+     *  'created_at',
+     *  'updated_at',
+     *  ];
+     */
 
     /**
      * The attributes that should be hidden for arrays.
