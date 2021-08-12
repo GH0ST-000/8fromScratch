@@ -10,8 +10,8 @@
                     >
                         Email
                     </label>
-
-                    <input class="border border-gray-400 p-2 w-full"
+                    <input
+                           class="border border-gray-400 p-2 w-full"
                            type="email"
                            name="email"
                            id="email"
@@ -30,7 +30,8 @@
                         Password
                     </label>
 
-                    <input class="border border-gray-400 p-2 w-full"
+                    <input
+                           class="border border-gray-400 p-2 w-full"
                            type="password"
                            name="password"
                            id="password"
@@ -51,14 +52,7 @@
                 @error('password')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-
-
             </form>
-
-
-
-
-
         </main>
     </section>
 </x-layout>

@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostCommentController extends Controller
 {
@@ -14,8 +11,6 @@ class PostCommentController extends Controller
 $post->comments()->create([
     'user_id'=>\request()->user()->id,
    'body'=>\request('body')
-
-
 ]);
 return back();
     }
