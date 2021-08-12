@@ -6,7 +6,7 @@ use Illuminate\Validation\Rule;
 
 class PostController extends Controller
 {
-    public  function  index(){
+    public function index(){
         return view('posts.show',[
             'posts'=>$this->getPosts(),
             'categories'=>Category::all()

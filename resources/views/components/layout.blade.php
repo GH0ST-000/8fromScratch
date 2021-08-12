@@ -26,6 +26,11 @@
                     <option>  <button class="text-xs font-bold uppercase" >Welcome,{{auth()->user()->name}}!</button></option>
                     <option><button onclick="/admin/posts/create">Create New Post</button></option>
                 </select>
+               <select>
+
+             <option>  <button class="text-xs font-bold uppercase" >Welcome,{{auth()->user()->name}}!</button></option>
+                <option><button onclick="/admin/posts/create">Create New Post</button></option>
+               </select>
                 <form method="post" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
                     @csrf
                     <button type="submit">Log Out</button>

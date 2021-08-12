@@ -8,7 +8,7 @@ class PostCommentController extends Controller
         \request()->validate([
            'body'=>'required'
         ]);
-$post->comments()->create([
+$post->comments()->create([ # Correct indentations
     'user_id'=>\request()->user()->id,
    'body'=>\request('body')
 ]);

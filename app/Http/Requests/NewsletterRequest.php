@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Requests;
-
 use App\Services\Newsletter;
 use Illuminate\Foundation\Http\FormRequest;
 
