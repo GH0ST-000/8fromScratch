@@ -8,6 +8,7 @@ class RegisterController extends Controller
     }
 
     public  function  store(){
+    # Create Request class
     $atribute=     \request()->validate([
             'name'=>'required|max:255|min:2',
             'username'=>'required|max:255|unique:users,username',

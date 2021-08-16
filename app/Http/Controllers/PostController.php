@@ -4,6 +4,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
 
+# Indentations
 class PostController extends Controller
 {
     public function index(){

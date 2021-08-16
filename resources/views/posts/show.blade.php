@@ -1,3 +1,4 @@
+# Correct Indentations
 <x-layout>
 <x-slot name="slot">
     @include('posts.header')

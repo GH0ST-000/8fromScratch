@@ -1,3 +1,4 @@
+# Correct Indentations
 <x-layout>
     <x-panel>
         <div class="flex flex-col mt-10">

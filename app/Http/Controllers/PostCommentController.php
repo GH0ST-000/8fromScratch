@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Post;
-
+# Correct Indentations
 class PostCommentController extends Controller
-{
+{ 
     public function store(Post $post ){
         \request()->validate([
            'body'=>'required'

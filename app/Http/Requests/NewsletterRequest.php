@@ -5,7 +5,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class NewsletterRequest extends FormRequest
 {
-
+    # Extract logic into controller
+    # Use Request for validations
     public function authorize()
     {
         return true;
