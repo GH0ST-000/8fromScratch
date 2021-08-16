@@ -3,7 +3,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostCommentController;
-use  App\Http\Controllers\SessionControlle; # Remove unused classes
 use  App\Http\Controllers\RegisterController;
 use  App\Http\Controllers\SessionController;
 use  App\Http\Controllers\NewsletterController;
@@ -28,7 +27,6 @@ Route::middleware('admin')->group(function (){
     Route::post('admin/posts',[PostController::class,'store']);
     Route::get('admin/posts/1/edit',[AdminPostController::class,'edit']);
     Route::delete('admin/posts/6',[AdminPostController::class,'destroy']);
-    # Remove blank line
 });
 
 

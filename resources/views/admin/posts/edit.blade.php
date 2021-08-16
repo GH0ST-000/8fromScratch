@@ -20,11 +20,6 @@
                     <p class="text-red-500 text-xs mt-2">{{ $messsage }}</p>
                     @enderror
                 </div>
-<<<<<<< HEAD
-=======
-                # remove additional blank line
-
->>>>>>> 95d5aeeade65fa64e0a871602ab4d64213609c7f
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="excerpt">Excerpt</label>
                     <textarea class="border border-gray-400 p-2 w-full" type="text" value="{{old('excerpt')}}" name="excerpt" id="excerpt" required></textarea>
@@ -41,23 +36,6 @@
                 </div>
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="category_id">Category</label>
-<<<<<<< HEAD
-=======
-                    # Remove commented(rotten) code 
-                    {{--                <textarea class="border border-gray-400 p-2 w-full" type="text" name="category" id="category" required></textarea>--}}
-{{--                    <select  class="border border-gray-400 p-2 w-full" type="text" name="category_id" id="category_id">--}}
-{{--                        @php--}}
-{{--                            $categories=App\Models\Category::all();--}}
-
-{{--                        @endphp--}}
-{{--                        @foreach($categories as $categori)--}}
-{{--                            <option value="{{$categori->id}}"--}}
-{{--                                {{old('category_id')==$categori->id ? 'selected':''}}>--}}
-{{--                                {{$categori->name}}</option>--}}
-{{--                        @endforeach--}}
-{{--                    </select>--}}
-
->>>>>>> 95d5aeeade65fa64e0a871602ab4d64213609c7f
                     @error('category')
                     <p class="text-red-500 text-xs mt-2">{{ $messsage }}</p>
                     @enderror

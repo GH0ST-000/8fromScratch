@@ -1,22 +1,19 @@
 <?php
+
 namespace App\Http\Controllers;
+
+use App\Http\Requests\LoginRequest;
+
 use App\Models\User;
+
 class RegisterController extends Controller
 {
     public function create(){
         return view('register.create');
     }
 
-    public  function  store(){
-    # Create Request class
-    $atribute=     \request()->validate([
-            'name'=>'required|max:255|min:2',
-            'username'=>'required|max:255|unique:users,username',
-            'email'=>'required|email|max:255|unique:users,email',
-            'password'=>'required|max:255|min:7'
-         ]);
-
-         $atribute = request()->all();
+    public  function  store(LoginRequest $request){
+         $atribute=$request->validated();
          $user=User::create($atribute);
          auth()->login($user);
          return redirect('/')->with('success','Your Account Has been Created !');

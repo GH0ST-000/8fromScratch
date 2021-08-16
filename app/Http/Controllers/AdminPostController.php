@@ -1,5 +1,7 @@
-<?php # insert new line below
-namespace App\Http\Controllers; # insert newline below
+<?php
+
+namespace App\Http\Controllers;
+
 use App\Models\Post;
 
 class AdminPostController extends Controller
@@ -18,5 +20,4 @@ class AdminPostController extends Controller
        $post->delete();
        return back()->with('success','Post Deleted');
    }
-   # remove blank line here
 }
