@@ -5,11 +5,12 @@ use App\Services\Newsletter;
 
 class NewsletterController extends Controller
 {
-    public  function  __invoke(NewsletterRequest $request, Newsletter $newsletter)
+    # Extract validation into request
+    public  function  __invoke(Newsletter $newsletter)
     {
-        $data = $request->validated();
-        $newsletter->subscribe($data['email']);
-
-        return redirect('/')->with('success','You are now signed up for our newsletter');
+        request()->validate(['email'=>'required|email']);
+       $request=new NewsletterRequest();
+       $request->rules();
+       return redirect('/')->with('success','You are now signed up for our newsletter');
     }
 }
